@@ -60,17 +60,24 @@ class Hangman extends Component {
     return (
       <div className="Hangman">
         <h1>Hangman</h1>
-        <p>Attempts left : {this.props.maxWrong - this.state.nWrong}</p>
-        <img src={this.props.images[this.state.nWrong]} />
-        <p className="Hangman-word">
-          {this.state.nWrong === this.props.maxWrong
-            ? this.state.answer
-            : this.guessedWord()}
-        </p>
-        <div className="Hangman-status">{gameState}</div>
-        <button onClick={this.reset} className="Hangman-reset">
-          Reset
-        </button>
+        <div className="img-container">
+          <img
+            src={this.props.images[this.state.nWrong]}
+            alt={`${this.state.nWrong} wrong guesses`}
+          />
+        </div>
+        <div className="Hangman-content">
+          <p>Attempts left : {this.props.maxWrong - this.state.nWrong}</p>
+          <p className="Hangman-word">
+            {this.state.nWrong === this.props.maxWrong
+              ? this.state.answer
+              : this.guessedWord()}
+          </p>
+          <div className="Hangman-status">{gameState}</div>
+          <button onClick={this.reset} className="Hangman-reset">
+            Reset
+          </button>
+        </div>
       </div>
     );
   }
