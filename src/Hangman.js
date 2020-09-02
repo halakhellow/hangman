@@ -20,6 +20,7 @@ class Hangman extends Component {
     super(props);
     this.state = { nWrong: 0, guessed: new Set(), answer: randomWord() };
     this.handleGuess = this.handleGuess.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   guessedWord() {
@@ -44,7 +45,13 @@ class Hangman extends Component {
       />
     );
   }
-
+  reset() {
+    this.setState({
+      nWrong: 0,
+      guessed: new Set(),
+      answer: randomWord(),
+    });
+  }
   render() {
     return (
       <div className="Hangman">
@@ -52,6 +59,9 @@ class Hangman extends Component {
         <img src={this.props.images[this.state.nWrong]} />
         <p className="Hangman-word">{this.guessedWord()}</p>
         <p className="Hangman-btns">{this.generateButtons()}</p>
+        <button onClick={this.reset} className="Hangman-reset">
+          Reset
+        </button>
       </div>
     );
   }
