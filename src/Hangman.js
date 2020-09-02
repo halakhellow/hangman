@@ -60,6 +60,7 @@ class Hangman extends Component {
     return (
       <div className="Hangman">
         <h1>Hangman</h1>
+        <p>Attempts left : {this.props.maxWrong - this.state.nWrong}</p>
         <img src={this.props.images[this.state.nWrong]} />
         <p className="Hangman-word">
           {this.state.nWrong === this.props.maxWrong
