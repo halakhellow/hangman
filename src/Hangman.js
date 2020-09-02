@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { randomWord } from "./words";
+import AlphaButtons from "./AlphaButtons";
 import "./Hangman.css";
 import img0 from "./images/0.jpg";
 import img1 from "./images/1.jpg";
@@ -35,15 +36,13 @@ class Hangman extends Component {
     }));
   }
   generateButtons() {
-    return "abcdefghijklmnopqrstuvwxyz".split("").map((ltr) => (
-      <button
-        value={ltr}
-        onClick={this.handleGuess}
-        disabled={this.state.guessed.has(ltr)}
-      >
-        {ltr}
-      </button>
-    ));
+    return (
+      <AlphaButtons
+        sequence="abcdefghijklmnopqrstuvwxyz"
+        guessedSet={this.state.guessed}
+        guess={this.handleGuess}
+      />
+    );
   }
 
   render() {
