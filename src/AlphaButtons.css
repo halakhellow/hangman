@@ -1,0 +1,25 @@
+.AlphaButtons {
+    border: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 3rem;
+    margin: 5px 2px 2px 2px;
+    letter-spacing: 1px;
+    outline: none;
+    background: #009688;
+    color: #fff;
+    box-shadow: 0 6px #015649;
+    border-radius: 5px;
+    padding-top: 4px;
+}
+
+.AlphaButtons:hover {
+    background-color: #0d3532;
+}
+
+.AlphaButtons:disabled {
+    background: #9e9e9e;
+    color: #eeeeee;
+    box-shadow: 0 6px #9e9e9e;
+}
