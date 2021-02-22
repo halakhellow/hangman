@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Hangman from "./components/Hangman/Hangman";
+
 import "./App.css";
-import Hangman from "./Hangman";
 
 class App extends Component {
   render() {
