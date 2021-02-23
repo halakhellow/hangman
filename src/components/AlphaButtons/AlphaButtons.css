@@ -1,25 +1,26 @@
 .AlphaButtons {
-    border: none;
-    font-family: inherit;
-    font-size: 1.5rem;
-    cursor: pointer;
-    width: 3rem;
-    margin: 5px 2px 2px 2px;
-    letter-spacing: 1px;
-    outline: none;
-    background: #009688;
-    color: #fff;
-    box-shadow: 0 6px #015649;
-    border-radius: 5px;
-    padding-top: 4px;
+  border: 2px solid maroon;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 3rem;
+  margin: 5px 3px 4px;
+  outline: none;
+  background-color: #fce728;
+  box-shadow: 0 3px #006400ab;
+  border-radius: 1rem;
+  padding-top: 4px;
 }
 
-.AlphaButtons:hover {
-    background-color: #0d3532;
+.AlphaButtons:not(:disabled):hover {
+  background-color: #080808;
+  color: whitesmoke;
 }
 
 .AlphaButtons:disabled {
-    background: #9e9e9e;
-    color: #eeeeee;
-    box-shadow: 0 6px #9e9e9e;
+  opacity: 0.5;
+}
+.AlphaButtons:disabled:hover {
+  cursor: not-allowed;
 }
