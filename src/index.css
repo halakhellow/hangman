@@ -1,7 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Coming+Soon");
+body,
+html {
+  background: url("./images/schoolboard.png.crdownload") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Coming Soon", cursive;
+  font-family: "KGTenThousandReasons", cursive;
+}
+
+@font-face {
+  font-family: "KGTenThousandReasons";
+  src: url(./fonts/KGTenThousandReasons.ttf);
 }
