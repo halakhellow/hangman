@@ -30,9 +30,17 @@
   font-size: 2.8rem;
 }
 
-.big-size {
+.right-answer,
+.wrong-answer {
   font-size: 3.5rem;
+}
+
+.right-answer {
   color: #fce728;
+}
+
+.wrong-answer {
+  color: maroon;
 }
 
 .Hangman-status {
