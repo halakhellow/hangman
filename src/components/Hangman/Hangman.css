@@ -1,39 +1,38 @@
 .Hangman {
-  color: black;
-
-}
-
-.Hangman .img-container {
-  width: 30%;
-  float: left;
-}
-
-.Hangman-content {
-  width: 70%;
-  float: left;
-}
-
-.Hangman-content p:first-of-type {
-  font-size: 1.5rem;
-}
-
-.Hangman img {
-  border: 3px solid black;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.27),
-    0 0 40px rgba(0, 0, 0, 0.06) inset;
+  color: whitesmoke;
 }
 
 .Hangman h1 {
   font-size: 4rem;
   font-weight: 100;
-  margin-bottom: 0.1em;
-  margin-top: 0;
+  margin: 0.5rem 0 2rem;
+}
+
+.Hangman .img-container {
+  width: 16%;
+  float: left;
+  margin-left: 5rem;
+}
+
+.Hangman-content {
+  width: 80%;
+  float: left;
+  margin-left: -5rem;
+}
+
+.Hangman-content p:first-of-type {
+  font-size: 1.4rem;
 }
 
 .Hangman-word {
-  letter-spacing: 1em;
+  letter-spacing: 2rem;
   margin: 0.4em -1em 0 0;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+}
+
+.big-size {
+  font-size: 3.5rem;
+  color: #fce728;
 }
 
 .Hangman-status {
@@ -46,17 +45,20 @@
 
 .Hangman-reset {
   display: block;
-  width: 7rem;
-  height: 1.5rem;
+  border: 2px solid maroon;
+  outline: none;
+  width: 8rem;
+  height: 1.7rem;
   font-family: inherit;
-  font-weight: bold;
   color: whitesmoke;
-  background-color: black;
-  border-radius: 4px;
-  margin: auto;
+  background-color: #080808;
+  border-radius: 13px;
+  margin: 0 auto 1rem;
 }
 
 .Hangman-reset:hover {
   cursor: pointer;
-  background-color: #0d3532;
+  background-color: #177b3d;
+  font-weight: bold;
+  color: black;
 }
