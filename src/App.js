@@ -1,16 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import Hangman from "./components/Hangman/Hangman";
 
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Hangman />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Hangman />
+    </div>
+  );
+};
 
 export default App;

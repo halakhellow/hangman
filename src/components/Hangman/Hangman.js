@@ -1,95 +1,83 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import AlphaButtons from "../AlphaButtons/AlphaButtons";
 
-import img0 from "../../images/0.png";
-import img1 from "../../images/1.png";
-import img2 from "../../images/2.png";
-import img3 from "../../images/3.png";
-import img4 from "../../images/4.png";
-import img5 from "../../images/5.png";
-import img6 from "../../images/6.png";
+import gallow from "../../images/gallow.png";
+import head from "../../images/head.png";
+import corpus from "../../images/corpus.png";
+import leftHand from "../../images/leftHand.png";
+import rightHand from "../../images/rightHand.png";
+import leftLeg from "../../images/leftLeg.png";
+import rightLeg from "../../images/rightLeg.png";
 
 import { randomWord } from "./words";
 
 import "./Hangman.css";
 
-class Hangman extends Component {
-  static defaultProps = {
-    maxWrong: 6,
-    images: [img0, img1, img2, img3, img4, img5, img6],
+const Hangman = () => {
+  const [nWrong, setNWrong] = useState(0);
+  const [guessed, setGuessed] = useState(new Set());
+  const [answer, setAnswer] = useState(randomWord());
+  const [rerender, setRerender] = useState(false);
+
+  const guessedWord = () =>
+    answer.split("").map((letter) => (guessed.has(letter) ? letter : "_"));
+
+  const handleGuess = (evt) => {
+    const letter = evt.target.value;
+    setGuessed(guessed.add(letter));
+    setRerender(!rerender);
+    setNWrong(nWrong + (answer.includes(letter) ? 0 : 1));
   };
 
-  constructor(props) {
-    super(props);
-    this.state = { nWrong: 0, guessed: new Set(), answer: randomWord() };
-  }
+  const generateButtons = () => (
+    <AlphaButtons
+      sequence="abcdefghijklmnopqrstuvwxyz"
+      guessedSet={guessed}
+      guess={handleGuess}
+    />
+  );
 
-  guessedWord() {
-    return this.state.answer
-      .split("")
-      .map((letter) => (this.state.guessed.has(letter) ? letter : "_"));
-  }
-
-  handleGuess = (evt) => {
-    let letter = evt.target.value;
-    this.setState((st) => ({
-      guessed: st.guessed.add(letter),
-      nWrong: st.nWrong + (st.answer.includes(letter) ? 0 : 1),
-    }));
+  const reset = () => {
+    setNWrong(0);
+    setGuessed(new Set());
+    setAnswer(randomWord());
   };
 
-  generateButtons() {
-    return (
-      <AlphaButtons
-        sequence="abcdefghijklmnopqrstuvwxyz"
-        guessedSet={this.state.guessed}
-        guess={this.handleGuess}
-      />
-    );
-  }
+  const maxWrong = 6;
+  const images = [gallow, head, corpus, leftHand, rightHand, leftLeg, rightLeg];
 
-  reset = () => {
-    this.setState({
-      nWrong: 0,
-      guessed: new Set(),
-      answer: randomWord(),
-    });
-  };
+  let gameState = generateButtons();
+  if (nWrong === maxWrong) gameState = "GAME OVER !";
+  if (guessedWord().join("") === answer) gameState = "CORRECT !";
 
-  render() {
-    let { nWrong, answer } = this.state;
-    let { maxWrong, images } = this.props;
-    let gameState = this.generateButtons();
-    if (nWrong === maxWrong) gameState = "GAME OVER !";
-    if (this.guessedWord().join("") === answer) gameState = "CORRECT !";
-    let gameWon = this.guessedWord().join("") === answer,
-      gameLose = nWrong === maxWrong;
-    return (
-      <div className="Hangman">
-        <h1>Hangman</h1>
-        <div className="img-container">
-          <img src={images[nWrong]} alt={`${nWrong} wrong guesses`} />
-        </div>
-        <div className="Hangman-content">
-          <p>Attempts left :{` ${maxWrong - nWrong} / ${maxWrong}`}</p>
-          <p
-            className={`Hangman-word ${gameWon && "right-answer"} ${
-              gameLose && "wrong-answer"
-            }`}
-          >
-            {nWrong === maxWrong ? answer : this.guessedWord()}
-          </p>
-          <div className="Hangman-status">{gameState}</div>
-          {(gameWon || gameLose) && (
-            <button onClick={this.reset} className="Hangman-reset">
-              Next word
-            </button>
-          )}
-        </div>
+  const gameWon = guessedWord().join("") === answer,
+    gameLose = nWrong === maxWrong;
+
+  return (
+    <div className="Hangman">
+      <h1>Hangman</h1>
+      <div className="img-container">
+        <img src={images[nWrong]} alt={`${nWrong} wrong guesses`} />
       </div>
-    );
-  }
-}
+      <div className="Hangman-content">
+        <p>Attempts left :{` ${maxWrong - nWrong} / ${maxWrong}`}</p>
+        <p
+          className={`Hangman-word ${gameWon && "right-answer"} ${
+            gameLose && "wrong-answer"
+          }`}
+        >
+          {nWrong === maxWrong ? answer : guessedWord()}
+        </p>
+        <div className="Hangman-status">{gameState}</div>
+        {(gameWon || gameLose) && (
+          <button onClick={reset} className="Hangman-reset">
+            Next word
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Hangman;

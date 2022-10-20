@@ -1,24 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import "./AlphaButtons.css";
 
-class AlphaButtons extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.sequence.split("").map((ltr) => (
-          <button
-            key={ltr}
-            value={ltr}
-            className="AlphaButtons"
-            onClick={this.props.guess}
-            disabled={this.props.guessedSet.has(ltr)}
-          >
-            {ltr}
-          </button>
-        ))}
-      </div>
-    );
-  }
-}
+const AlphaButtons = ({ sequence, guess, guessedSet }) => {
+  return (
+    <>
+      {sequence.split("").map((letter) => (
+        <button
+          key={letter}
+          value={letter}
+          className="AlphaButtons"
+          onClick={guess}
+          disabled={guessedSet.has(letter)}
+        >
+          {letter}
+        </button>
+      ))}
+    </>
+  );
+};
 
 export default AlphaButtons;
