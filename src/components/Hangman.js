@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import AlphaButtons from "../AlphaButtons/AlphaButtons";
+import AlphaButtons from "./AlphaButtons";
 
 import gallow from "../../images/gallow.png";
 import head from "../../images/head.png";
