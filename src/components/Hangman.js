@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import AlphaButtons from "./AlphaButtons";
 
-import gallow from "../../images/gallow.png";
-import head from "../../images/head.png";
-import corpus from "../../images/corpus.png";
-import leftHand from "../../images/leftHand.png";
-import rightHand from "../../images/rightHand.png";
-import leftLeg from "../../images/leftLeg.png";
-import rightLeg from "../../images/rightLeg.png";
+import gallow from "../images/gallow.png";
+import head from "../images/head.png";
+import corpus from "../images/corpus.png";
+import leftHand from "../images/leftHand.png";
+import rightHand from "../images/rightHand.png";
+import leftLeg from "../images/leftLeg.png";
+import rightLeg from "../images/rightLeg.png";
 
 import { randomWord } from "./words";
 
