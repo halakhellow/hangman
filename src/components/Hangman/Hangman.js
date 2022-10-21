@@ -12,8 +12,6 @@ import rightLeg from "../../images/rightLeg.png";
 
 import { randomWord } from "./words";
 
-import "./Hangman.css";
-
 const Hangman = () => {
   const [nWrong, setNWrong] = useState(0);
   const [guessed, setGuessed] = useState(new Set());
@@ -55,26 +53,42 @@ const Hangman = () => {
     gameLose = nWrong === maxWrong;
 
   return (
-    <div className="Hangman">
-      <h1>Hangman</h1>
-      <div className="img-container">
-        <img src={images[nWrong]} alt={`${nWrong} wrong guesses`} />
-      </div>
-      <div className="Hangman-content">
-        <p>Attempts left :{` ${maxWrong - nWrong} / ${maxWrong}`}</p>
-        <p
-          className={`Hangman-word ${gameWon && "right-answer"} ${
-            gameLose && "wrong-answer"
-          }`}
-        >
-          {nWrong === maxWrong ? answer : guessedWord()}
-        </p>
-        <div className="Hangman-status">{gameState}</div>
-        {(gameWon || gameLose) && (
-          <button onClick={reset} className="Hangman-reset">
-            Next word
-          </button>
-        )}
+    <div className="text-whitesmoke">
+      <h1 className="mt-[0.5rem] mb-[2rem] text-[2.5rem] font-thin md:text-[4rem]">
+        Hangman
+      </h1>
+      <div className="flex flex-col justify-between space-y-16 p-5 md:flex-row">
+        <div className="mx-auto md:ml-[5rem] md:w-[25%]">
+          <img
+            className="h-[30vh]"
+            src={images[nWrong]}
+            alt={`${nWrong} wrong guesses`}
+          />
+        </div>
+        <div className="mx-auto flex flex-col justify-between text-xl md:w-[75%]">
+          <p className="mb-[2rem] text-[1.6rem]">
+            Attempts left :{` ${maxWrong - nWrong} / ${maxWrong}`}
+          </p>
+          <p
+            className={`my-[2rem] text-[2.5rem] tracking-[1rem] md:my-[3rem]  md:tracking-[2rem] ${
+              gameWon && "text-[3.5rem] text-darkYellow"
+            } ${gameLose && "text-[3.5rem] text-maroon"}`}
+          >
+            {nWrong === maxWrong ? answer : guessedWord()}
+          </p>
+          <div className="mx-auto my-[2rem] text-center text-xl md:w-1/2 md:text-[1.5rem]">
+            {gameState}
+          </div>
+
+          {(gameWon || gameLose) && (
+            <button
+              onClick={reset}
+              className="mx-auto block w-[8rem] rounded-[13px] border-[2px] border-solid border-maroon bg-darkBlack text-[1rem] hover:cursor-pointer hover:bg-boardGreen hover:font-bold hover:text-black"
+            >
+              Next word
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

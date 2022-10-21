@@ -1,11 +1,9 @@
 import React from "react";
 import Hangman from "./components/Hangman/Hangman";
 
-import "./App.css";
-
 const App = () => {
   return (
-    <div className="App">
+    <div className="App text-center">
       <Hangman />
     </div>
   );
