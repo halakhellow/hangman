@@ -1,15 +1,22 @@
 {
-  "main.css": "static/css/main.0aa577aa.css",
-  "main.css.map": "static/css/main.0aa577aa.css.map",
-  "main.js": "static/js/main.2a4cf86f.js",
-  "main.js.map": "static/js/main.2a4cf86f.js.map",
-  "static\\media\\0.png": "static/media/0.56e9e021.png",
-  "static\\media\\1.png": "static/media/1.2d833518.png",
-  "static\\media\\2.png": "static/media/2.2b662d7f.png",
-  "static\\media\\3.png": "static/media/3.f25c6be3.png",
-  "static\\media\\4.png": "static/media/4.e83c4f11.png",
-  "static\\media\\5.png": "static/media/5.840c082c.png",
-  "static\\media\\6.png": "static/media/6.06c26290.png",
-  "static\\media\\KGTenThousandReasons.ttf": "static/media/KGTenThousandReasons.b353f51f.ttf",
-  "static\\media\\schoolboard.png": "static/media/schoolboard.ba5ac002.png"
+  "files": {
+    "main.css": "/hangman/static/css/main.dca636c6.css",
+    "main.js": "/hangman/static/js/main.7b35f86f.js",
+    "static/media/schoolboard.png": "/hangman/static/media/schoolboard.4ea5985bcee844c68b6d.png",
+    "static/media/KGTenThousandReasons.ttf": "/hangman/static/media/KGTenThousandReasons.152e903334ad9b5b7845.ttf",
+    "static/media/rightLeg.png": "/hangman/static/media/rightLeg.a9b7752eba2838de82c6.png",
+    "static/media/leftLeg.png": "/hangman/static/media/leftLeg.9561dc10e61432f22214.png",
+    "static/media/rightHand.png": "/hangman/static/media/rightHand.7107c03abecf94a6a0fc.png",
+    "static/media/leftHand.png": "/hangman/static/media/leftHand.1676ea44cab5cbcccde7.png",
+    "static/media/corpus.png": "/hangman/static/media/corpus.5a2e3f8e71d62165f453.png",
+    "static/media/head.png": "/hangman/static/media/head.6600622fc533727ef31d.png",
+    "static/media/gallow.png": "/hangman/static/media/gallow.d712938d81a98cb6bbbd.png",
+    "index.html": "/hangman/index.html",
+    "main.dca636c6.css.map": "/hangman/static/css/main.dca636c6.css.map",
+    "main.7b35f86f.js.map": "/hangman/static/js/main.7b35f86f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dca636c6.css",
+    "static/js/main.7b35f86f.js"
+  ]
 }
