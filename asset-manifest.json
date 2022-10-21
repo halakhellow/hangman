@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hangman/static/css/main.dca636c6.css",
+    "main.js": "/hangman/static/js/main.7b35f86f.js",
+    "static/media/schoolboard.png": "/hangman/static/media/schoolboard.4ea5985bcee844c68b6d.png",
+    "static/media/KGTenThousandReasons.ttf": "/hangman/static/media/KGTenThousandReasons.152e903334ad9b5b7845.ttf",
+    "static/media/rightLeg.png": "/hangman/static/media/rightLeg.a9b7752eba2838de82c6.png",
+    "static/media/leftLeg.png": "/hangman/static/media/leftLeg.9561dc10e61432f22214.png",
+    "static/media/rightHand.png": "/hangman/static/media/rightHand.7107c03abecf94a6a0fc.png",
+    "static/media/leftHand.png": "/hangman/static/media/leftHand.1676ea44cab5cbcccde7.png",
+    "static/media/corpus.png": "/hangman/static/media/corpus.5a2e3f8e71d62165f453.png",
+    "static/media/head.png": "/hangman/static/media/head.6600622fc533727ef31d.png",
+    "static/media/gallow.png": "/hangman/static/media/gallow.d712938d81a98cb6bbbd.png",
+    "index.html": "/hangman/index.html",
+    "main.dca636c6.css.map": "/hangman/static/css/main.dca636c6.css.map",
+    "main.7b35f86f.js.map": "/hangman/static/js/main.7b35f86f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dca636c6.css",
+    "static/js/main.7b35f86f.js"
+  ]
+}
