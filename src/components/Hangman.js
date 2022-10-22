@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import randomWord from "random-words";
 
 import AlphaButtons from "./AlphaButtons";
 
@@ -9,8 +10,6 @@ import leftHand from "../images/leftHand.png";
 import rightHand from "../images/rightHand.png";
 import leftLeg from "../images/leftLeg.png";
 import rightLeg from "../images/rightLeg.png";
-
-import { randomWord } from "./words";
 
 const Hangman = () => {
   const [nWrong, setNWrong] = useState(0);
